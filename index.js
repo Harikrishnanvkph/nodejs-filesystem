@@ -13,7 +13,7 @@ const server = express();
 server.use("/read",require("./api_endpoint.js"))
 
 // listening to the server via port
-server.listen(port,"localhost",()=>{
+server.listen(port,()=>{
   console.log(process.env)
     console.log(`Starting the Server at http://localhost:${port} ...`)
 })

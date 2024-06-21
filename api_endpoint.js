@@ -21,12 +21,17 @@ route.get("/:name",async (req,res,next)=>{
 })
 
 route.get("/write",async (req,res,next)=>{
-   const tree = await readFolderFiles("./date_stamp_files");
-   console.log(tip)
-   res.json( tip == undefined ? {
-    message : "NO SUCH ENDPOINT FOUND"
-   } : tip)
+   const date = new Date();
+   await writeFile(`./date_stamp_files/${date}.txt`,stampFile());
+   res.json(`Done written a file with current timestamp ${date}`)
 })
+
+function stampFile(){
+    // Get the current timestamp
+    var timestamp = Date.now();
+    var date = new Date()
+    return `Date is ${date}\nCurrent timestamp : ${timestamp}`;
+}
 
 
 module.exports = route;

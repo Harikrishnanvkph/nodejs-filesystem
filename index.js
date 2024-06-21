@@ -22,7 +22,7 @@ server.get("/",async (req,res,next)=>{
    res.json({
     success : true,
     message : `Welcome to Node JS Task 1 `,
-    available_Endpoints : ["/write","/read","/read/date-time","/read/date-time1","/read/date-time2"]
+    available_Endpoints : ["/write","/read","/read/:fileName"]
    })
 })
 

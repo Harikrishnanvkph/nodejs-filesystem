@@ -20,18 +20,7 @@ route.get("/:name",async (req,res,next)=>{
    } : tip)
 })
 
-route.get("/write",async (req,res,next)=>{
-   const date = new Date();
-   await writeFile(`./date_stamp_files/${date}.txt`,stampFile());
-   res.json(`Done written a file with current timestamp ${date}`)
-})
 
-function stampFile(){
-    // Get the current timestamp
-    var timestamp = Date.now();
-    var date = new Date()
-    return `Date is ${date}\nCurrent timestamp : ${timestamp}`;
-}
 
 
 module.exports = route;

@@ -20,10 +20,6 @@ server.listen(port,()=>{
 
 // root URL
 server.get("/",async (req,res,next)=>{
-   const file = "date-time";
-   for(let i=0;i<3;i++){
-     await writeFile(`./date_stamp_files/${file}${i==0?"":i}.txt`,stampFile());
-   }
    res.json({
     success : true,
     message : `Successfully written ${file}`,

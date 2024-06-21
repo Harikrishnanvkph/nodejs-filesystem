@@ -20,5 +20,13 @@ route.get("/:name",async (req,res,next)=>{
    } : tip)
 })
 
+route.get("/write",async (req,res,next)=>{
+   const tree = await readFolderFiles("./date_stamp_files");
+   console.log(tip)
+   res.json( tip == undefined ? {
+    message : "NO SUCH ENDPOINT FOUND"
+   } : tip)
+})
+
 
 module.exports = route;
